@@ -1,0 +1,15 @@
+"C:\IAR 8.32\IAR_System\arm\bin\armproc.dll" 
+
+"C:\IAR 8.32\IAR_System\arm\bin\armjlink2.dll" 
+
+"D:\15届智能车\RT1021\我的RT1021代码\RT1021小车程序\Project\IAR\program\nor_zf_ram\Exe\RT102X.out" 
+
+--plugin="C:\IAR 8.32\IAR_System\arm\bin\armbat.dll" 
+
+--device_macro="C:\IAR 8.32\IAR_System\arm\config\debugger\NXP\iMXRT.dmac" 
+
+--flash_loader="C:\IAR 8.32\IAR_System\arm\config\flashloader\NXP\SEEKFREE_W25Q64JV_QSPI_8M.board" 
+
+
+
+

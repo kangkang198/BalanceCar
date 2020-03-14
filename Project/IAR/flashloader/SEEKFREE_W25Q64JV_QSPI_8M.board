@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<flash_board>
+  <pass>
+    <loader>$TOOLKIT_DIR$\config\flashloader\NXP\SEEKFREE_W25Q64JV_QSPI_8M.flash</loader>
+    <range>CODE 0x60000000 0x607fffff</range>
+	<args>--setQE</args>
+  </pass>
+</flash_board>
+
+

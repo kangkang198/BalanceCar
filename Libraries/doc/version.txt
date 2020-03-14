@@ -1,0 +1,76 @@
+V1.0
+    初始版本
+
+V1.01
+	修复在IAR编译器下 sprintf 浮点BUG，导致各类显示屏显示浮点出现问题
+	修改sprintf函数名为zf_sprintf,避免MDK去链接Keil C库下的sprintf
+	修改最大占空比不能超过65535的问题
+    
+V1.02
+    修复PRINTF函数无法使用的问题
+    
+V1.03
+    增加将代码放进ITCM的操作，有利于提高计算密集型程序的速度
+    #ifdef __CC_ARM                         //ARM编译器 如KEIL
+        __attribute__((section("ITCM_CODE")))
+    #elif defined (__IAR_SYSTEMS_ICC__)     //IAR编译器
+        #pragma location = "ITCM_CODE"
+        
+V1.04
+    修复IIC4 引脚复用设置错误的问题
+	修复正交解码获取函数返回值类型不对的问题
+	FLEXSPI_TransferBlocking函数调用的FLEXSPI_CheckAndClearError函数替换为FLEXSPI_CheckAndClearError_noncache
+    将IAR工程选项中的复位方式更改为normal
+    重写zf_flash文件，解决IAR操作flash有问题的BUG
+	将flash的采样时钟设置为DQS回环
+    添加FSL_DRIVER_TRANSFER_DOUBLE_WEAK_IRQ=0到defined symbols
+	
+V1.05
+	修改PWM分步值不能超过65535的问题
+	将zf_camera文件中的FXIO_SHFT_COUNT替换为FLEXIO_SHFT_COUNT
+	IPS液晶增加ips_displayimage032_zoom1函数，函数可以指定图像显示的起始坐标
+	修复IPS和TFT图像压缩显示不能压缩高度的问题
+    对TCM的分配进行了一个较大的修改，ITCM设置为64KB，DTCM设置为128KB，OCRAM设置为64KB
+    对MPU配置也根据实际设置的TCM大小也进行了对应的修改
+    原有的RW和ZI段变量分配在OCRAM改变为DTCM 从而提升性能
+    修改IAR的下载算法，下载新库之后使用库目录下的IAR下载算法替换之前的下载算法
+	修改将代码放入TCM的方式
+    将JLINK的复位选项设置为reset pin，DAP的复位选项设置为hardware
+	
+V1.06
+	解决在IAR下，代码放入ITCM之后可能造成不能打断点的问题
+	修复PWM引脚复用设置错误造成无法输出PWM的问题
+	
+V1.07
+	修复模拟IIC延时函数设置错误的问题
+	由于flash操作问题始终没有彻底解决，因此移除工程里关于flash操作的文件，后期打算对添加外接SPI flash的支持文件，这样来提供绝对的稳定性。
+    
+V1.08
+    添加外置flash的驱动文件，在seekfree_peripheral分组中，支持W25Q64FV W25Q32FV W25Q16FV W25Q64JV W25Q32JV W25Q16JV，需要注意这个是自己外接一个flash芯片！！！！
+	自己画板子时  最好在flash芯片的电源引脚附近放置一个0.1uf的电容和一个10uf的电容
+    
+V1.09
+    修改gpio_get函数的实现
+    修改IAR与MDK的批处理文件，临时文件可以清除的更加干净。
+	将默认的下载工具设置为DAP
+	添加2寸 IPS并口屏幕驱动
+	将常用颜色统一定义在font文件
+	修改ICM20602的寄存器配置
+	修改6050 CONFIG宏定义名称为MPU6050_CONFIG
+	修改2寸屏幕 彩色摄像头显示函数
+	增加彩色摄像头驱动程序
+    增加1.8tft 1.14IPS彩色摄像头 显示函数
+	
+V1.10
+	修复2寸IPS可能花屏的问题
+	修复PIT定时器有可能不工作的问题
+	
+V1.11
+	修改彩色摄像头默认参数，以及相关的备注
+	修改flexio分频错误的问题
+	增加uart_set_handle使用示例
+	
+V1.12
+	增加fsl_ocotp SDK底层驱动文件
+	更新部分驱动文件到 SDK2.6.1版本
+	

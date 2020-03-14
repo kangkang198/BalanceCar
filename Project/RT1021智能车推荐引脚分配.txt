@@ -1,0 +1,27 @@
+摄像头 TX:C6 RX:C7 VSY:B21 HREF:B22 PCLK:B23  D7-D0:B24 B25 B26 B27 B28 B29 B30 B31
+
+正交解码 A:C0 DIR:C1 A:C2 DIR:C3 A:D0 DIR:D1 A:D2 DIR:D3
+
+adc B14 B17 B18 B19 B20
+
+串口 TX:B6 RX:B7
+
+TFT SCK:B10 CS:B11 MOSI:B12 B13 B8 B9 
+
+ICM SCK:C10 MOSI:C12 MISO:C13 CS:C11
+
+无线转串口	TX:D17 RX:D18 D16 D19 加普通IO两个
+
+PWM D4 D5 D6 D7 C28 C29 C30 C31
+
+舵机 C26 C27
+
+拨码开关
+
+蜂鸣器
+
+按键
+
+
+C16 至 C27尽量不要使用,这些是启动时所用到的配置引脚（boot_cfg）。
+如果需要使用的话C16 至 C27 尽量不要用作输入

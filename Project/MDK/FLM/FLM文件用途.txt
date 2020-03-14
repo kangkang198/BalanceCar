@@ -1,0 +1,4 @@
+SEEKFREE_W25Q64JV_QSPI_8M.FLM文件是用于下载程序是使用的下载算法
+
+将此文件复制到Keil_v5\ARM\Flash文件夹下
+
